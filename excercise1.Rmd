@@ -1,0 +1,32 @@
+---
+title: "STA426 - Exercise 1"
+author: "Joël Meili"
+date: "9/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sampling of a log-normal distribution
+The following code demonstrates how a sample can be drawn from a log-normal distribution:
+```{r}
+set.seed(1)
+s <- rlnorm(n = 100, meanlog = 1, sdlog = 0.25)
+```
+
+### Graphical anlaysis of the sample
+The following figure illustrates the distribution of the sample:
+```{r}
+hist(s, main = "Histogram of the sample")
+```
+
+The following figure illustrates the distribution of the log-scaled sample:
+```{r}
+hist(log(s), main = "Histogram of the log-scaled sample")
+```
+
+### Key figures of the sample
+The mean and the variance of the sample are equal to `r mean(s)` respectively `r var(s)`.
+
